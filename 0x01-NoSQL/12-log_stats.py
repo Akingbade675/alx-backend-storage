@@ -21,5 +21,8 @@ if __name__ == "__main__":
     print('\tmethod DELETE: {}'.format(nginx.count_documents(
                                                         {'method': 'DELETE'}
                                                         )))
-    print('{} status check'.format(nginx.count_documents({'$and': [{'path': '/status'}, {'method': 'GET'}]})))
-    client.close()
+    print('{} status check'.format(nginx.count_documents(
+        {'$and': [
+            {'path': '/status'},
+            {'method': 'GET'}
+        ]})))
